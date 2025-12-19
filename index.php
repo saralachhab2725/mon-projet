@@ -4,7 +4,9 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Index - Lachhab Sara</title></head>
+<head><title>Lachhab Sara - Resume Registry</title>
+<a href="login.php">Please log in</a>
+</head>
 <body>
 <h1>Profiles</h1>
 <?php require_once "util.php"; flashMessage(); ?>
@@ -33,5 +35,14 @@ if (!isset($_SESSION['name'])) {
     echo '<p><a href="add.php">Add New Entry</a> | <a href="logout.php">Logout</a></p>';
 }
 ?>
+<?php
+session_start();
+
+if ( ! isset($_SESSION['name']) ) {
+    echo '<a href="login.php">Please log in</a>';
+}
+?>
+
 </body>
 </html>
+
